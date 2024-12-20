@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychological Counseling - Personal Website</title>
+    <!-- 引入Bootstrap和动画库 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        /* 全屏背景设置 */
+        #home {
+            height: 100vh;
+            background-image: url('https://source.unsplash.com/1920x1080/?therapy,calm');
+            /* 替换成心理咨询相关图片 */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* 半透明背景块 */
+        .content-box {
+
+            padding: 2rem;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        /* 自定义字体和动画延迟 */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        a.btn-custom {
+            background: white;
+            color: black;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a.btn-custom:hover {
+            background: black;
+            color: white;
+        }
+
+        /* 默认导航栏样式 */
+        .navbar-custom {
+            background-color: rgb(77, 123, 94);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-custom a.nav-link,
+        .navbar-custom .navbar-brand {
+            color: white !important;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-custom.scrolled {
+            background-color: white !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-custom.scrolled a.nav-link,
+        .navbar-custom.scrolled .navbar-brand {
+            color: rgb(77, 123, 94) !important;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(100%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-custom.scrolled .navbar-toggler-icon {
+            filter: invert(0%);
+        }
+
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">You & Mind</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Wechat 选项 -->
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#" id="wechat-link" style="position: relative;">
+                            微信
+                        </a>
+                        <!-- 隐藏的二维码 -->
+                        <div id="wechat-qr" class="position-absolute bg-white p-2 shadow"
+                            style="display: none; top: 30px; left: 0; z-index: 1000; border-radius: 10px;">
+                            <img src="./微信图片_20241218220655.jpg" alt="WeChat QR Code"
+                                style="width: 150px; height: 150px;">
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主页：全屏背景 -->
+    <!-- 主页：全屏背景 -->
+    <section id="home"
+        style="background-color: rgb(77,123,94); background-size: cover; background-position: center; height: 100vh; color: white; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <div class="content-box animate__animated animate__fadeInDown">
+            <!-- 中文标题和描述 -->
+            <h1 class="animate__animated animate__fadeInDown">欢迎来到我的心理咨询空间</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">
+                一个平静、安全的地方，倾听、疗愈、并成长。
+            </p>
+
+            <!-- 服务特色部分 -->
+            <div class="row mt-5 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="col-md-4 mb-4">
+                    <div class="p-3" style=" border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+                        <i class="bi bi-heart-fill" style="font-size: 2rem; color: #f0ad4e;"></i>
+                        <h5 class="mt-2">安全的环境</h5>
+                        <p style="font-size: 1rem;">保密且无评判的空间，助您实现个人成长。</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-3" style=" border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+                        <i class="bi bi-brightness-high-fill" style="font-size: 2rem; color: #5bc0de;"></i>
+                        <h5 class="mt-2">专业的帮助</h5>
+                        <p style="font-size: 1rem;">多年专业经验，帮助您面对生活中的挑战。</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-3" style=" border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+                        <i class="bi bi-calendar-check-fill" style="font-size: 2rem; color: #5cb85c;"></i>
+                        <h5 class="mt-2">灵活的预约</h5>
+                        <p style="font-size: 1rem;">根据您的时间安排，提供灵活的咨询服务。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Me 按钮放在最下方 -->
+            <div class="mt-4">
+                <a href="#we-listen"
+                    class="btn btn-lg btn-custom shadow-lg animate__animated animate__zoomIn animate__delay-2s"
+                    style="background-color: white; color: black; transition: all 0.3s ease;">
+                    了解更多
+                </a>
+            </div>
+        </div>
+
+        <!-- 波浪SVG -->
+        <div style="position: absolute; bottom: -60px; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="width: 100%; height: 80px;">
+                <path d="M0,60 C150,120 450,0 600,60 C750,120 1050,0 1200,60 L1200,120 L0,120 Z" fill="#f9f4e9"></path>
+            </svg>
+        </div>
+
+    </section>
+
+
+    <!-- 新页面：我们聆听 -->
+    <section id="we-listen" class="py-5"
+        style="background-color: #f9f4e9; display: flex; justify-content: center; align-items: center; min-height: 50vh;">
+        <div class="container" style="width: 50%; display: flex; align-items: center;">
+            <!-- 左侧：文字和矩形图 -->
+            <div style="flex: 1; padding-right: 1rem;">
+                <h3 style="font-size: 1.5rem; font-weight: bold; color: #333; margin-bottom: 1rem;">我们聆听</h3>
+                <p style="font-size: 1rem; color: #555; margin-bottom: 1rem;">
+                    在这里，你绝不是孤单一人。我们愿意耐心倾听你的故事，帮助你找到内心的平静和力量。85% 的来访者 在经历持续且专业的心理咨询后，情绪状态得到了显著的改善，生活质量也随之提升。
+                </p>
+                <!-- 矩形图 -->
+                <div style="margin-top: 1rem;">
+                    <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #555;">情绪改善率</p>
+                    <div style="background-color: #ffffff; width: 100%; height: 15px; border-radius: 10px;">
+                        <div id="progressBar"
+                            style="background-color: #da9461; width: 0%; height: 100%; border-radius: 10px; transition: width 2s ease-in-out;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：插画 -->
+            <div style="flex: 1; text-align: center;">
+                <img src="./DALL·E 2024-12-16 23.19.05 - A professional yet cute cartoon-style illustration of a psychological counseling session. The scene is minimalistic and calming, featuring two charact.webp"
+                    alt="Listening Illustration" style="max-width: 300px; height: auto; border-radius: 10px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- 新页面：我们疗愈 -->
+    <section id="we-heal" class="py-5"
+        style="background-color: #f9f4e9; display: flex; justify-content: center; align-items: center; min-height: 50vh;">
+        <div class="container" style="width: 50%; display: flex; align-items: center; justify-content: space-between;">
+            <!-- 左侧：插画 -->
+            <div class="animate__animated animate__fadeInLeft"
+                style="flex: 1; text-align: center; padding-right: 2rem; animation-delay: 0.3s;">
+                <img src="./DALL·E 2024-12-16 23.34.45 - A professional and calming cartoon-style illustration depicting the concept of emotional healing and therapy. The scene shows a young girl sitting pea.webp"
+                    alt="Healing Illustration" style="max-width: 300px; height: auto; border-radius: 10px;">
+            </div>
+
+            <!-- 右侧：文字内容 -->
+            <div class="animate__animated animate__fadeInRight"
+                style="flex: 1; text-align: left; animation-delay: 0.6s;">
+                <h3 style="font-size: 1.8rem; font-weight: bold; color: #333; margin-bottom: 1rem;">我们疗愈</h3>
+                <p style="font-size: 1rem; color: #555; line-height: 1.6;">
+                    在这里，我们不仅聆听，更致力于帮助您走出内心的困扰。通过科学的心理咨询方法和真诚的关怀，我们陪伴您逐渐疗愈心灵的创伤，找到内在的平静与力量，重塑美好的生活。
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 波浪线SVG -->
+    <div
+        style="position: relative; width: 100%; overflow: hidden; line-height: 0; background-color: #f9f4e9; margin-top: -20px;">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" style="width: 100%; height: 100px;">
+            <path
+                d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,186.7C960,149,1056,107,1152,96C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+                fill="#ffffff"></path>
+        </svg>
+    </div>
+
+
+
+
+    <!-- 新段落：我们的服务 -->
+    <section id="our-services" class="py-5" style="background: #ffffff;">
+        <div class="container text-center">
+            <h2 class="mb-4" style="font-weight: bold; font-size: 2rem; color: #333;">我们的服务</h2>
+            <div class="row justify-content-center">
+                <!-- 第一列：Affordable -->
+                <div class="col-md-4 mb-4 animate__animated" style="opacity: 0;">
+                    <div class="p-4">
+                        <i class="bi bi-cash-stack" style="font-size: 3rem; color: #da9461;"></i>
+                        <h4 class="mt-3" style="color: #333;">Affordable</h4>
+                        <p style="color: #555; font-size: 1rem; margin-top: 1rem;">
+                            我们提供负担得起的心理咨询服务，特别推出首次咨询免费半小时机制，帮助您迈出第一步。</p>
+                    </div>
+                </div>
+                <!-- 第二列：Professional -->
+                <div class="col-md-4 mb-4 animate__animated" style="opacity: 0;">
+                    <div class="p-4">
+                        <i class="bi bi-award" style="font-size: 3rem; color: #5bc0de;"></i>
+                        <h4 class="mt-3" style="color: #333;">Professional</h4>
+                        <p style="color: #555; font-size: 1rem; margin-top: 1rem;">
+                            专业心理咨询团队，多年的实际经验与科学的疗愈方法，为您提供高品质的心理支持。</p>
+                    </div>
+                </div>
+                <!-- 第三列：Effective -->
+                <div class="col-md-4 mb-4 animate__animated" style="opacity: 0;">
+                    <div class="p-4">
+                        <i class="bi bi-lightbulb" style="font-size: 3rem; color: #5cb85c;"></i>
+                        <h4 class="mt-3" style="color: #333;">Effective</h4>
+                        <p style="color: #555; font-size: 1rem; margin-top: 1rem;">
+                            专注于高效且持续的效果，通过一对一个性化咨询，帮助您走向生活的转折点与心灵的平静。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Contact 页面 -->
+    <section id="contact" class="py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-4">联系我</h2>
+            <p class="text-center mb-4">I'm here to help. Reach out to me anytime.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <!-- 使用 Formspree 的 URL -->
+                    <form action="https://formspree.io/f/xeoqyboj" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">你的名字</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">你想让我知道什么？</label>
+                            <textarea class="form-control" id="message" name="message" rows="5"
+                                placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">提交</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 引入Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 监听矩形图是否进入视口
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressBar = document.getElementById("progressBar");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        progressBar.style.width = "85%";
+                        observer.unobserve(progressBar); // 动画执行一次后停止观察
+                    }
+                });
+            }, {
+                threshold: 0.5 // 当50%矩形图出现在视口时触发
+            });
+
+            observer.observe(progressBar);
+        });
+    </script>
+    <script>
+        // 添加滚动事件监听
+        document.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".navbar-custom");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+    <script>
+        // 滚动触发动画
+        document.addEventListener("DOMContentLoaded", () => {
+            const serviceItems = document.querySelectorAll("#our-services .animate__animated");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.classList.add("animate__fadeInUp");
+                        observer.unobserve(entry.target); // 动画执行一次后停止观察
+                    }
+                });
+            }, {
+                threshold: 0.5 // 当元素50%进入视口时触发动画
+            });
+
+            serviceItems.forEach(item => observer.observe(item));
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 鼠标悬停显示二维码
+        const wechatLink = document.getElementById("wechat-link");
+        const wechatQR = document.getElementById("wechat-qr");
+
+        wechatLink.addEventListener("mouseenter", () => {
+            wechatQR.style.display = "block";
+        });
+
+        wechatLink.addEventListener("mouseleave", () => {
+            wechatQR.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
